@@ -1,0 +1,8 @@
+- [ ]  1-2 HTML Text: Creating paragraphs, Text formatting (b, i, strong, em)
+- [ ]  1-3 HTML Text: Headings, small and inline vs block (div, span)
+- [ ]  1-4 HTML List: Container tag, list tags (ol, ul, li), line break, button
+- [ ]  1-5 HTML Link: Creating links with the anchor tag and it’s attributes (href, target)
+- [ ]  1-6 HTML Image: Display online image, local image, folder image
+- [ ]  1-7 HTML Form: input types, buttons, select, option, login form
+- [ ]  1-8 HTML Structure: Doctype, html, head, meta, title, body
+- [ ]  1-9 HTML Overview: Basic HTML concepts and practice task
