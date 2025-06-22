@@ -1,0 +1,15 @@
+## Inline CSS
+
+## Internal CSS
+
+
+# Text color
+# Text decoration
+# Font Size
+# Font family
+# Font Style
+
+# CSS Selector - (id, class)
+#
+
+## External CSS
