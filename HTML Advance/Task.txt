@@ -1,5 +1,10 @@
 1. Install Sublime Text
-
+2. Explore HTML Quotations
+3. create a div with padding and rounded corner
+4. Create 10 Links - 3 Link open in "current tab" 3 Link open in "new tab" 3 Link open in "parent" 3 Link open in "self" 1 Link normal
+5. Write a paragraph explaining What is "Elements" Write in you own words, don't worry about bad language, just express what you know.
+6. Write a paragraph explaining What is "Attributes"
+7. Write a paragraph explaining What is "Inline CSS and Internal CSS"
 
 
 Problem: p tag error
