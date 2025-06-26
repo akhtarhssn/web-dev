@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- In your <head> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+    <title>Learn HTML - Tutorial</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f6fa;
+        }
+
+        /* Container */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 240px;
+            background-color: #1B263B;
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .sidebar {
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+        }
+
+        .sidebar::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, Opera */
+        }
+
+        .sidebar-title {
+            color: #41C7C7;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin: 10px 0;
+        }
+
+        .sidebar-menu a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidebar-menu a:hover {
+            background-color: #41C7C7;
+            color: #1B263B;
+        }
+
+        .sidebar-menu a.active {
+            background-color: #41C7C7;
+            color: #1B263B;
+            font-weight: bold;
+        }
+
+        /* Content */
+        .content {
+            margin-left: 240px;
+            padding: 20px;
+            width: 100%;
+            /* margin: 0 auto; */
+
+        }
+
+        .content section {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h1 {
+            color: #1B263B;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            color: #1B263B;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        /* .content code {
+            background-color: #f5f6fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .content pre {
+            background-color: #1B263B;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .content pre code {
+            background-color: transparent;
+            color: #ffffff;
+        } */
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .content {
+                margin-left: 220px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: static;
+                height: auto;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+
+        /* button {
+            background-color: #1B263B;
+            border: none;
+            color: white;
+            padding: 16px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            border-radius: 6px;
+        }
+
+        button:hover {
+            background-color: #41C7C7;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        } */
+
+        button {
+            padding: 16px 40px;
+            font-size: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <h2 class="sidebar-title">HTML Tutorial</h2>
+            <ul class="sidebar-menu">
+                <li><a href="#html-introduction" class="active">HTML Introduction</a></li>
+                <li><a href="#html-editors">HTML Editors</a></li>
+                <li><a href="#html-basic">HTML Basic</a></li>
+                <li><a href="#html-elements">HTML Elements</a></li>
+                <li><a href="#html-attributes">HTML Attributes</a></li>
+                <li><a href="#html-headings">HTML Headings</a></li>
+                <li><a href="#html-paragraphs">HTML Paragraphs</a></li>
+                <li><a href="#html-styles">HTML Styles</a></li>
+                <li><a href="#html-formatting">HTML Formatting</a></li>
+                <li><a href="#html-quotations">HTML Quotations</a></li>
+                <li><a href="#html-comments">HTML Comments</a></li>
+                <li><a href="#html-colors">HTML Colors</a></li>
+                <li><a href="#html-css">HTML CSS</a></li>
+                <li><a href="#html-links">HTML Links</a></li>
+                <li><a href="#html-images">HTML Images</a></li>
+                <li><a href="#html-favicon">HTML Favicon</a></li>
+                <li><a href="#html-page-title">HTML Page Title</a></li>
+                <li><a href="#html-tables">HTML Tables</a></li>
+                <li><a href="#html-lists">HTML Lists</a></li>
+                <li><a href="#html-block-inline">HTML Block & Inline</a></li>
+                <li><a href="#html-div">HTML Div</a></li>
+                <li><a href="#html-classes">HTML Classes</a></li>
+                <li><a href="#html-id">HTML ID</a></li>
+                <li><a href="#html-iframes">HTML Iframes</a></li>
+                <li><a href="#html-javascript">HTML JavaScript</a></li>
+                <li><a href="#html-file-paths">HTML File Paths</a></li>
+                <li><a href="#html-head">HTML Head</a></li>
+                <li><a href="#html-layout">HTML Layout</a></li>
+                <li><a href="#html-responsive">HTML Responsive</a></li>
+                <li><a href="#html-computercode">HTML Computercode</a></li>
+                <li><a href="#html-semantics">HTML Semantics</a></li>
+                <li><a href="#html-style-guide">HTML Style Guide</a></li>
+                <li><a href="#html-entities">HTML Entities</a></li>
+                <li><a href="#html-symbols">HTML Symbols</a></li>
+                <li><a href="#html-emojis">HTML Emojis</a></li>
+                <li><a href="#html-charset">HTML Charset</a></li>
+                <li><a href="#html-url-encode">HTML URL Encode</a></li>
+                <li><a href="#html-vs-xhtml">HTML vs. XHTML</a></li>
+                <li><a href="#html-forms">HTML Forms</a></li>
+                <li><a href="#html-form-attributes">HTML Form Attributes</a></li>
+                <li><a href="#html-form-elements">HTML Form Elements</a></li>
+                <li><a href="#html-input-types">HTML Input Types</a></li>
+                <li><a href="#html-input-attributes">Input Form Attributes</a></li>
+                <li><a href="#html-graphics">HTML Graphics</a></li>
+                <li><a href="#html-media">HTML Media</a></li>
+            </ul>
+        </nav>
+
+        <!-- Content Area -->
+        <main class="content">
+            <section id="html-introduction">
+                <h1>HTML Introduction</h1>
+                <p>HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages
+                    and web applications.</p>
+                <h2>What is HTML?</h2>
+                <p>HTML is used to structure content on the web. It consists of a series of elements that you use to
+                    enclose, or wrap, different parts of the content to make it appear or act in a certain way.</p>
+                <h2>Example</h2>
+                <pre>
+                    <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My First Web Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome to HTML&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                    </code>
+                </pre>
+                <br>
+                <p>The above code creates a simple web page with a heading and a paragraph.</p>
+            </section>
+            <section id="html-editors">
+                <div style="padding: 20px">
+                    <h1>HTML/Code Editors</h1>
+                    <br>Content for HTML Editors goes here. Add details about popular editors like
+                    <br />
+                    <br>
+                    <span>Windows Applications:</span>
+                    </p>
+                    <ul style="list-style-type: none;">
+                        <li><a href="https://www.sublimetext.com/" target="_blank">Sublime Text</a></li>
+                        <li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+                        <li><a href="https://www.atom.io/" target="_blank">Atom</a></li>
+                        <li><a href="https://www.vim.org/" target="_blank">Vim</a></li>
+                        <li><a href="https://www.emacs.org/" target="_blank">Emacs</a></li>
+                    </ul>
+                    </p>
+                    <p>Online Editor:
+                    <ul style="list-style-type: none;">
+                        <li><a href="https://codepen.io/" target="_blank">CodePen</a></li>
+                        <li><a href="https://jsfiddle.net/" target="_blank">JSFiddle</a></li>
+                        <li><a href="https://replit.com/" target="_blank">Replit</a></li>
+                        <li><a href="https://codesandbox.io/" target="_blank">CodeSandbox</a></li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <section id="html-basic">
+                <h1>HTML Basic</h1>
+                <p>Content for HTML Basic goes here. Explain basic HTML structure and tags.</p>
+            </section>
+
+            <section id="html-elements">
+                <h1>HTML Elements</h1>
+                <p>Content for HTML Elements goes here. Describe elements like div, span, etc.</p>
+
+                <pre>
+    <code class="language-html">
+        &lt;tagname&gt;Content goes here...&lt;/tagname&gt;
+        &lt;h1&gt;This is a heading&lt;/h1&gt;
+    </code>
+                </pre>
+            </section>
+
+            <section id="html-attributes">
+                <h1>HTML Attributes</h1>
+                <p>Content for HTML Attributes goes here. Explain attributes like id, class, etc.</p>
+
+                <button>Active</button>
+
+                <p>
+                    Non Value Attributes
+                    <br>
+                <pre>
+    <code class="language-html">
+        &lt;button disabled&gt;Disabled&lt;/button&gt;
+    </code>
+                    </pre>
+                </p>
+                <button disabled>Disabled</button>
+
+            </section>
+
+            <section id="html-headings">
+                <h1>HTML Headings</h1>
+                <p>Content for HTML Headings goes here. Discuss h1 to h6 tags.</p>
+                <pre>
+    <code class="language-html">
+        &lt;h1&gt;This is a Heading&lt;/h1&gt;
+        &lt;h2&gt;This is a Subheading&lt;/h2&gt;
+        &lt;h3&gt;This is a Sub-subheading&lt;/h3&gt;
+        &lt;h4&gt;This is a Smaller Heading&lt;/h4&gt;
+        &lt;h5&gt;This is an Even Smaller Heading&lt;/h5&gt;
+        &lt;h6&gt;This is the Smallest Heading&lt;/h6&gt
+    </code>
+</pre>
+            </section>
+
+            <section id="html-paragraphs">
+                <h1>HTML Paragraphs</h1>
+                <p>Content for HTML Paragraphs goes here. Explain the p tag.</p>
+
+                <pre>
+    <code class="language-html">
+        &lt;p&gt;
+            This paragraph
+            contains a lot of lines
+            in the source code,
+            but the browser
+            ignores it.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+            This paragraph
+            contains a lot of spaces
+            in the source code,
+            but the browser
+            ignores it.
+        &lt;/p&gt;
+    </code>
+</pre>
+
+
+            </section>
+
+            <section id="html-styles">
+                <h1>HTML Styles</h1>
+                <p>Content for HTML Styles goes here. Introduce inline CSS.</p>
+
+                <p style="color: red;">Iam Red not Blue</p>
+                <p style="font-size: 40px;">I am Big</p>
+
+                <pre>
+                    <code class="language-html">
+&lt;p style="property: value;"&gt;I am Red not Blue&lt;/p&gt; <span style="font-size: 20px;">✅✅✅</span>
+<br>
+&lt;p font-size: 40px;&gt;I am Big&lt;/p&gt;  <span style="font-size: 20px;">❌❌❌</span>
+
+&lt;p style="bgcolor: pink" &gt;I am Pink&lt;/p&gt; <span style="font-size: 20px;">❌❌❌</span>
+                    </code>
+                </pre>
+
+            </section>
+
+            <section id="html-formatting">
+                <h1>HTML Formatting</h1>
+                <p>Content for HTML Formatting goes here. Discuss b, i, strong, etc.</p>
+
+                <pre>
+    <code class="language-html">
+        &lt;b&gt; - Bold text
+        &lt;strong&gt; - Important text
+        &lt;i&gt; - Italic text
+        &lt;em&gt; - Emphasized text
+        &lt;mark&gt; - Marked text
+        &lt;small&gt; - Smaller text
+        &lt;del&gt; - Deleted text
+        &lt;ins&gt; - Inserted text
+        &lt;sub&gt; - Subscript text
+        &lt;sup&gt; - Superscript text    
+    </code>
+</pre>
+
+                <p><b>This is bold text</b></p>
+                <p><i>This is italic text</i></p>
+                <p><strong>This is strong text</strong></p>
+                <p><em>This is emphasized text</em></p>
+                <p><mark>This is marked text</mark></p>
+                <p><small>This is small text</small></p>
+                <p><del>This is deleted text</del></p>
+                <p><ins>This is inserted text</ins></p>
+                <p>Hello World <sub>2025</sub></p>
+                <p>Hello World <sup>2025</sup></p>
+
+            </section>
+
+            <section id="html-quotations">
+                <h1>HTML Quotations</h1>
+                <p>Content for HTML Quotations goes here. Explain blockquote, q tags.</p>
+
+                <p>Here is a quote from WWF's website:</p>
+                <blockquote>
+                    For 60 years, WWF has worked to help people and nature thrive. As the world's leading conservation
+                    organization, WWF
+                    works in nearly 100 countries. At every level, we collaborate with people around the world to
+                    develop and deliver
+                    innovative solutions that protect communities, wildlife, and the places in which they live.
+                </blockquote>
+            </section>
+
+            <section id="html-comments">
+                <h1>HTML Comments</h1>
+                <p>Content for HTML Comments goes here. Show comment syntax.</p>
+            </section>
+
+            <section id="html-colors">
+                <h1>HTML Colors</h1>
+                <p>Content for HTML Colors goes here. Discuss color values.</p>
+            </section>
+
+            <section id="html-css">
+                <h1>HTML CSS</h1>
+                <p>Content for HTML CSS goes here. Introduce CSS integration.</p>
+            </section>
+
+            <section id="html-links">
+                <h1>HTML Links</h1>
+                <p>Content for HTML Links goes here. Explain a tag and href.</p>
+            </section>
+
+            <section id="html-images">
+                <h1>HTML Images</h1>
+                <p>Content for HTML Images goes here. Discuss img tag.</p>
+            </section>
+
+            <section id="html-favicon">
+                <h1>HTML Favicon</h1>
+                <p>Content for HTML Favicon goes here. Explain favicon setup.</p>
+            </section>
+
+            <section id="html-page-title">
+                <h1>HTML Page Title</h1>
+                <p>Content for HTML Page Title goes here. Discuss title tag.</p>
+            </section>
+
+            <section id="html-tables">
+                <h1>HTML Tables</h1>
+                <p>Content for HTML Tables goes here. Explain table, tr, td tags.</p>
+            </section>
+
+            <section id="html-lists">
+                <h1>HTML Lists</h1>
+                <p>Content for HTML Lists goes here. Discuss ul, ol, li tags.</p>
+            </section>
+
+            <section id="html-block-inline">
+                <h1>HTML Block & Inline</h1>
+                <p>Content for HTML Block & Inline goes here. Explain display types.</p>
+            </section>
+
+            <section id="html-div">
+                <h1>HTML Div</h1>
+                <p>Content for HTML Div goes here. Discuss div tag usage.</p>
+            </section>
+
+            <section id="html-classes">
+                <h1>HTML Classes</h1>
+                <p>Content for HTML Classes goes here. Explain class attribute.</p>
+            </section>
+
+            <section id="html-id">
+                <h1>HTML ID</h1>
+                <p>Content for HTML ID goes here. Discuss id attribute.</p>
+            </section>
+
+            <section id="html-iframes">
+                <h1>HTML Iframes</h1>
+                <p>Content for HTML Iframes goes here. Explain iframe tag.</p>
+            </section>
+
+            <section id="html-javascript">
+                <h1>HTML JavaScript</h1>
+                <p>Content for HTML JavaScript goes here. Introduce script tag.</p>
+            </section>
+
+            <section id="html-file-paths">
+                <h1>HTML File Paths</h1>
+                <p>Content for HTML File Paths goes here. Discuss relative/absolute paths.</p>
+            </section>
+
+            <section id="html-head">
+                <h1>HTML Head</h1>
+                <p>Content for HTML Head goes here. Explain head tag contents.</p>
+            </section>
+
+            <section id="html-layout">
+                <h1>HTML Layout</h1>
+                <p>Content for HTML Layout goes here. Discuss layout techniques.</p>
+            </section>
+
+            <section id="html-responsive">
+                <h1>HTML Responsive</h1>
+                <p>Content for HTML Responsive goes here. Introduce responsive design.</p>
+            </section>
+
+            <section id="html-computercode">
+                <h1>HTML Computercode</h1>
+                <p>Content for HTML Computercode goes here. Discuss code, pre tags.</p>
+            </section>
+
+            <section id="html-semantics">
+                <h1>HTML Semantics</h1>
+                <p>Content for HTML Semantics goes here. Explain semantic elements.</p>
+            </section>
+
+            <section id="html-style-guide">
+                <h1>HTML Style Guide</h1>
+                <p>Content for HTML Style Guide goes here. Discuss best practices.</p>
+            </section>
+
+            <section id="html-entities">
+                <h1>HTML Entities</h1>
+                <p>Content for HTML Entities goes here. Explain entity codes.</p>
+            </section>
+
+            <section id="html-symbols">
+                <h1>HTML Symbols</h1>
+                <p>Content for HTML Symbols goes here. Discuss symbol entities.</p>
+            </section>
+
+            <section id="html-emojis">
+                <h1>HTML Emojis</h1>
+                <p>Content for HTML Emojis goes here. Explain emoji usage.</p>
+            </section>
+
+            <section id="html-charset">
+                <h1>HTML Charset</h1>
+                <p>Content for HTML Charset goes here. Discuss meta charset.</p>
+            </section>
+
+            <section id="html-url-encode">
+                <h1>HTML URL Encode</h1>
+                <p>Content for HTML URL Encode goes here. Explain URL encoding.</p>
+            </section>
+
+            <section id="html-vs-xhtml">
+                <h1>HTML vs. XHTML</h1>
+                <p>Content for HTML vs. XHTML goes here. Compare HTML and XHTML.</p>
+            </section>
+
+            <section id="html-forms">
+                <h1>HTML Forms</h1>
+                <p>Content for HTML Forms goes here. Introduce form tag.</p>
+            </section>
+
+            <section id="html-form-attributes">
+                <h1>HTML Form Attributes</h1>
+                <p>Content for HTML Form Attributes goes here. Discuss form attributes.</p>
+            </section>
+
+            <section id="html-form-elements">
+                <h1>HTML Form Elements</h1>
+                <p>Content for HTML Form Elements goes here. Explain input, select, etc.</p>
+            </section>
+
+            <section id="html-input-types">
+                <h1>HTML Input Types</h1>
+                <p>Content for HTML Input Types goes here. Discuss input types.</p>
+            </section>
+
+            <section id="html-input-attributes">
+                <h1>Input Form Attributes</h1>
+                <p>Content for Input Form Attributes goes here. Explain input attributes.</p>
+            </section>
+
+            <section id="html-graphics">
+                <h1>HTML Graphics</h1>
+                <p>Content for HTML Graphics goes here. Discuss canvas, SVG, etc.</p>
+            </section>
+
+            <section id="html-media">
+                <h1>HTML Media</h1>
+                <p>Content for HTML Media goes here. Explain video, audio tags.</p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Smooth scrolling and active link highlighting
+        document.querySelectorAll('.sidebar-menu a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Remove active class from all links
+                document.querySelectorAll('.sidebar-menu a').forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                this.classList.add('active');
+                // Scroll to section
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Highlight active link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.content section');
+            const scrollPos = window.scrollY + 100; // Offset for better visibility
+            sections.forEach(section => {
+                if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+                    const id = section.getAttribute('id');
+                    document.querySelectorAll('.sidebar-menu a').forEach(l => l.classList.remove('active'));
+                    document.querySelector(`.sidebar-menu a[href="#${id}"]`).classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
