@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .banner-section {
+            background-image: url('./assets/banner.png');
+            /* Replace with your actual image path */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            /* Adjust text color for visibility against your background */
+            text-align: center;
+            position: relative;
+            height: 100vh;
+            /* Adjust as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .banner-overlay {
+            background: linear-gradient(360deg, #090909 3.48%, rgba(16, 16, 16, 0.00) 80%);
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-section p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .banner-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .banner-section .description-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .banner-section .call-to-action {
+            background-color: #007bff;
+            /* Example button color */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .banner-section .call-to-action:hover {
+            background-color: #0056b3;
+            /* Darker shade on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <section class="banner-section">
+        <div class="banner-overlay">
+            <div class="">
+                <p>Welcome to Our Site</p>
+                <h1>Discover Amazing Things</h1>
+                <p class="description-text">Explore our wide range of products and services designed to meet your needs.
+                    We
+                    are
+                    dedicated to providing the best experience possible.</p>
+                <button class="call-to-action">Learn More</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
