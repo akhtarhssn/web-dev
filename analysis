@@ -1,0 +1,14 @@
+Step 1: Menubar => Logo, Menu Item X4, Login
+
+Step 2: Logo left side, Menu center, Login Right side
+
+Step 3: Header/Hero Section => h1, p, button X2
+
+Step 4: Image
+
+Structure:
+     i) main section contain all the content
+    ii) Menubar has three div
+   iii) Hero section content in the center of the screen
+    iv) an image
+
